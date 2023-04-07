@@ -79,15 +79,29 @@
   
               </ul>
             </li>
+            <li class="nav-item mx-2">
+              <a href="#" class="nav-link text-white">Cart 4</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="#" class="nav-link text-white">Wishlist 4</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="#" class="nav-link text-white">Login</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a href="#" class="nav-link text-white">Registration</a>
+            </li>
           </ul>
         </div>
       </nav>
+      {% block banner-slider %}{% endblock banner-slider %}
+      {% block information %}{% endblock information %}
       {% block maincontent %}{% endblock maincontent %}
-      <footer>sher afzal khan</footer>
+      <footer class="container-fluid bg-success text-center p-2 mt-s fixed-bottom">copyright : 2023 || develope by : sherafzalkhan</footer>
 
-    <script src = "all.min.js"></script>
-    <script src = "myscript.js"/></script>
-    <script src = "owl.carousel.min.js"></script>
+    <script src = " {% static 'js/all.min.js' %} "></script>
+    <script src = "{% static 'js/myscript.js' %}"></script>
+    <script src = "{% static 'js/owl.carousel.min.js' %}"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </body>
 
