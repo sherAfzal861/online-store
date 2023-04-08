@@ -37,7 +37,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
@@ -48,11 +48,13 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">curd </a>
-                <a class="dropdown-item" href="#">milkshake</a>
-                <a class="dropdown-item" href="#">lasi </a>
-                <a class="dropdown-item" href="#">paneer</a>
-                <a class="dropdown-item" href="#">icecream </a>
+                <a class="dropdown-item" href="{% url 'category' 'ML' %}">Milk </a>
+                <a class="dropdown-item" href="{% url 'category' 'CR' %}">curd </a>
+                <a class="dropdown-item" href="{% url 'category' 'MS' %}">milkshake</a>
+                <a class="dropdown-item" href="{% url 'category' 'LS' %}">lasi </a>
+                <a class="dropdown-item" href="{% url 'category' 'PN' %}">paneer</a>
+                <a class="dropdown-item" href="{% url 'category' 'IC' %}">icecream </a>
+                <a class="dropdown-item" href="{% url 'category' 'GH' %}">Ghee</a>
               
             </li>
             <li class="nav-item">
