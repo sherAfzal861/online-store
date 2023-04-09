@@ -89,3 +89,9 @@
 .goodnesssec a{
     text-decoration: none;
 }
+.text-decoration-line-through{
+    text-decoration-line: line-through;
+}
+.black{
+    color: blue;
+}
