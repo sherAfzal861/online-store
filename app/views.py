@@ -18,3 +18,9 @@ class ProductDetail(View):
     def get(self, request, pk):
         product = Product.objects.get(id=pk)
         return render(request, "productdetail.html", locals())
+    
+class CategoryTitle(View):
+    def get(self, request, val):
+        product = Product.objects.filter(title = val)
+        title = Product.objects.filter(category=product[0].category).values('title')
+        return render(request, "category.html", locals())
