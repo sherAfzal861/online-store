@@ -60,10 +60,10 @@
               
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">about us</a>
+              <a class="nav-link text-white" href="{% url 'about' %}">about us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">contact us</a>
+              <a class="nav-link text-white" href="{% url 'contact' %}">contact us</a>
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
@@ -76,7 +76,7 @@
                 Dropdown
               </a>
               <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
                 <li><a class="dropdown-item" href="#">Orders</a></li>
                 <li><a class="dropdown-item" href="#">Change Password</a></li>
                 <li><a class="dropdown-item" href="#">Logout</a></li>
@@ -90,10 +90,10 @@
               <a href="#" class="nav-link text-white">Wishlist 4</a>
             </li>
             <li class="nav-item mx-2">
-              <a href="#" class="nav-link text-white">Login</a>
+              <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
             </li>
             <li class="nav-item mx-2">
-              <a href="#" class="nav-link text-white">Registration</a>
+              <a href="{% url 'customerregistration' %}" class="nav-link text-white">Registration</a>
             </li>
           </ul>
         </div>
