@@ -1,5 +1,5 @@
 .dropd{
-    display: flex;
+    display: block;
 }
 
 .owl-carousel .item{

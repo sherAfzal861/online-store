@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.views import View
-from . models import Product, Customer
+from . models import Product, Customer, Cart
 from django.db.models import Count
 from . forms import CustomerRegistrationForm, CustomerProfileForm
 from django.contrib import messages
@@ -93,3 +93,20 @@ class updateAddress(View):
             messages.success(request, "Invalid Input Data")
 
         return redirect("address")
+    
+def add_to_cart(request):
+    user = request.user
+    product_id = request.GET.get('prod_id')
+    product = Product.objects.get(id=product_id)
+    Cart(user=user, product=product).save()
+    return redirect("/cart")
+
+def show_cart(request):
+    user = request.user
+    cart = Cart.objects.filter(user=user)
+    amount = 0
+    for p in cart:
+        value = p.quantity * p.product.discounted_price
+        amount = amount + value
+    totalamount = amount + 40
+    return render(request, 'addtocart.html', locals())

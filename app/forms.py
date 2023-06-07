@@ -30,8 +30,8 @@ class MyPasswordResetForm(PasswordResetForm):
     email= forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
     
 class MySetPasswordForm(SetPasswordForm):
-    new_password1 = forms.CharField(label='enter Password', widget=forms.PasswordInput(attrs={'autocomplete':'current-password','class':'form-control'}))
-    new_password1 = forms.CharField(label='Confirm  Password', widget=forms.PasswordInput(attrs={'autocomplete':'current-password', 'class':'form-control'}))
+    new_password1 = forms.CharField(label="Enter New password", widget=forms.PasswordInput(attrs={'autocomplete':'current-password','class':'form-control'}))
+    new_password2 = forms.CharField(label="Confirm Password", widget=forms.PasswordInput(attrs={'autocomplete':'current-password', 'class':'form-control'}))
     
 
 class CustomerProfileForm(forms.ModelForm):
