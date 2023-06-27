@@ -99,12 +99,13 @@ def add_to_cart(request):
     user = request.user
     product_id = request.GET.get('prod_id')
     product = Product.objects.get(id=product_id)
-    c = Cart.objects.get(Q(product=product_id) & Q(user=request.user))
-    if not c:
-        Cart(user=user, product=product).save()
-    else:
+    try:
+        c = Cart.objects.get(Q(product=product_id) & Q(user=request.user))
         c.quantity+=1
         c.save()
+    except:
+        Cart(user=user, product=product).save()
+        
     return redirect("/cart")
 
 def show_cart(request):
@@ -116,6 +117,18 @@ def show_cart(request):
         amount = amount + value
     totalamount = amount + 40
     return render(request, 'addtocart.html', locals())
+
+class checkout(View):
+    def get(self,request):
+        user = request.user
+        add=Customer.objects.filter(user=user)
+        cart_items=Cart.objects.filter(user=user)
+        famount=0
+        for p in cart_items:
+            value = p.quantity * p.product.discounted_price
+            famount = famount + value
+        totalamount = famount+40
+        return render(request, 'checkout.html', locals())
 
 def plus_cart(request):
     if request.method == "GET":
@@ -153,6 +166,25 @@ def minus_cart(request):
         totalamount = amount + 40
         data={
             'quantity':c.quantity,
+            'amount':amount,
+            'totalamount':totalamount
+        }
+        return JsonResponse(data)
+
+def remove_cart(request):
+    if request.method == "GET":
+        prod_id=request.GET['prod_id']
+        print(prod_id, "   ", request.user)
+        c = Cart.objects.get(Q(product=prod_id) & Q(user=request.user))
+        c.delete()
+        user = request.user
+        cart =Cart.objects.filter(user=user)
+        amount = 0
+        for p in cart:
+            value = p.quantity * p.product.discounted_price
+            amount = amount + value
+        totalamount = amount + 40
+        data={
             'amount':amount,
             'totalamount':totalamount
         }
