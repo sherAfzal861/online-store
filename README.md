@@ -34,14 +34,14 @@ source env/bin/activate
 ```
 
 4. Install the dependencies:
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 5. Apply database migrations:
-python manage.py makemigrations
-python manage.py migrate
+    python manage.py makemigrations
+    python manage.py migrate
 
 6. Start the development server:
-python manage.py runserver
+    python manage.py runserver
 
 
 7. Access the application in your web browser at `http://localhost:8000`.
