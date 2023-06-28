@@ -15,7 +15,7 @@ Users can browse different categories, view product details, add items to their 
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/sherAfzal861/online-store/tree/main
+`git clone https://github.com/sherAfzal861/online-store/tree/main`
 2. Create a virtual environment:
 python -m venv env
 
@@ -34,17 +34,23 @@ source env/bin/activate
 ```
 
 4. Install the dependencies:
-    pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
 
-5. Apply database migrations:
-    python manage.py makemigrations
-    python manage.py migrate
+6. Apply database migrations:
+```
+python manage.py makemigrations
+python manage.py migrate
+```
 
-6. Start the development server:
-    python manage.py runserver
+7. Start the development server:
+```
+python manage.py runserver
+```
 
 
-7. Access the application in your web browser at `http://localhost:8000`.
+8. Access the application in your web browser at `http://localhost:8000`.
 
 ## Usage
 
