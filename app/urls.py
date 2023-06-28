@@ -22,6 +22,10 @@ urlpatterns = [
     path('removecart/', views.remove_cart),
     path('cart/', views.show_cart, name="cart"),
     # path("checkout/", views.show_cart, name='checkout'),
+    
+    #WISHLIST
+    path('pluswishlist/', views.plus_wishlist),
+    path('minuswishlist/', views.minus_wishlist),
     #login authentication
     path('registration/', views.CustomerRegistrationview.as_view(), name='customerregistration'),
     path('accounts/login/', auth_view.LoginView.as_view(template_name='login.html',
